@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+    {% block content_body %}
+	<div class="row">
+		<form class="form-horizontal well" method="POST">
+		  <fieldset>
+		  	{% if message %}
+		    	<legend>{{message}}</legend>
+		    {% else %}
+		    	<legend>Welcome back! Login bellow</legend>
+		    {% endif %}
+		    <div class="control-group">
+		      <label class="control-label">Username</label>
+		      <div class="controls">
+		        <input type="text" class="input-large" name="username">
+		        <label class="error">{{error}}</label>
+		      </div>
+		    </div>
+		    <div class="control-group">
+		      <label class="control-label">Password</label>
+		      <div class="controls">
+		        <input type="password" class="input-large" name="password">
+		      </div>
+		    </div>
+		    <div class="form-actions">
+		    	<button type="submit" class="btn-large btn-primary">Log In!</button>
+		    </div>
+		  </fieldset>
+		</form>
+	</div> 
+
+    {% endblock %} <!-- main -->

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+    {% block content_body %}
+	<div class="row">
+		<form class="form-horizontal well" method="POST">
+		  <fieldset>
+		    <legend>Signup</legend>
+		    <div class="control-group">
+		      <label class="control-label">Choose a Username</label>
+		      <div class="controls">
+		        <input type="text" class="input-large" name="username" value="{{username}}">
+		        <label class="error">{{user_error}}</label>
+		      </div>
+		    </div>
+		    <div class="control-group">
+		      <label class="control-label">E-mail (optional)</label>
+		      <div class="controls">
+		        <input type="text" class="input-large" name="email" value="{{email}}">
+		        <label class="error">{{email_error}}</label>
+		      </div>
+		    </div>
+		    <div class="control-group">
+		      <label class="control-label">Choose a Password</label>
+		      <div class="controls">
+		        <input type="password" class="input-large" name="password">
+		        <label class="error">{{pass_error}}</label>
+		      </div>
+		    </div>
+		    <div class="control-group">
+		      <label class="control-label">Re-type Password</label>
+		      <div class="controls">
+		        <input type="password" class="input-large" name="verify">
+		        <label class="error">{{verify_error}}</label>
+		      </div>
+		    </div>
+		    <div class="form-actions">
+	    		<button class="btn-large btn-primary">Join!</button>
+	    	</div>
+		  </fieldset>
+		</form>
+	</div> 
+
+    {% endblock %} <!-- main -->

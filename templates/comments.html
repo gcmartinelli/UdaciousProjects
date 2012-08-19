@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+	{% block content_body %}
+		{% for comment in comments %}
+			{{comment.username}}<br>
+			<img class="avatar" src="{{comment.useravatar}}"/><br>
+			{{comment.text}}<br>
+			{{comment.date.strftime('%b %d, %Y %I:%M %p')}}<br>
+		{% endfor %}
+		{% if user %}
+		<form method="POST">
+			<textarea name="text"></textarea>
+			<input type="submit" value="Comment">
+		</form>
+		{% else %}
+		<p><a href="/login">Login</a> or <a href="/signup">Register</a> to comment</p>
+		{% endif %}
+	{% endblock %}

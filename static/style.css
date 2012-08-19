@@ -10,6 +10,11 @@ a {
    color: gray;
 	}
 
+.avatar {
+   width: 50px;
+   height: 50px;
+}
+
 #wrapper {
 	width: 940px;
 	margin: 0 auto;

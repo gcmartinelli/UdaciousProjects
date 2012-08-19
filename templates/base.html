@@ -34,6 +34,18 @@
 					<p>Find cool projects made by <a href="http://www.udacity.com">Udacity</a>'s students!</p>
 					<div class="nav">
 						<ul>
+						{% if not user %}
+						<li class="button">
+							<a href="/login">
+								Login
+							</a>
+						</li>
+						<li class="button">
+							<a href="/signup">
+								Signup
+							</a>
+						</li>
+						{% else %}
 						<li class="button">
 							<a href="/about">
 								About
@@ -44,19 +56,19 @@
 								Submit an App!
 							</a>
 						</li>
+						<li class="button">
+							<a href="/logout">
+								Log out
+							</a>
+						</li>
+						{% endif %}
 						</ul>
 					</div>
 			</div>
 
 			<div id="content">
 				{% block content_body %}
-				<div class="project">
-					<a class="project_name" href="{{proj.link}}">
-						<h3>{{proj.name}}</h3>
-					</a>
-					<img class="project_img" src="{{proj.image}}" alt="the project's image" >
-					<p class="proj_description">{{proj.description}}</p>
-				</div>
+
 				{% endblock %}
 				<div class="clear"></div>
 			</div>

@@ -14,6 +14,7 @@
 				{% endif %}
 				<img class="project_img" src="{{proj.image}}" alt="the project's image" >
 				<p class="proj_description">{{proj.description}}</p>
+				<a href="/comments/{{proj.key().id()}}">Comments</a>
 			</div>
 		{% endfor %}
 	{% endblock %}
