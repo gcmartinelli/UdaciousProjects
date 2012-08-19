@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+	{% block content_body %}
+			<p> <b>Please:</b> only submit projects that were made using knowledge gained from Udacity classes.<p>
+			<form method="POST">
+				<table>
+					<tr>
+						<td class="label">Project name:</td>
+						<td><input type="text" name="name" value="{{name}}" placeholder="HackingPot"></td>
+						<td class="error">{{name_error}}</td>
+					</tr>
+					<tr>
+						<td class="label">Creator's Twitter Account:</td>
+						<td><input type="text" name="creator" value="{{creator}}" placeholder="@gcmartinelli"></td>
+					</tr>
+					<tr>
+						<td class="label">Link:</td>
+						<td><input type="text" name="link" value="{{link}}" placeholder="http://www.hackingpot.com"></td>
+						<td class="error">{{link_error}}</td>
+					</tr>
+					<tr>
+						<td class="label">Description:</td>
+						<td><textarea name="description">{{description}}</textarea></td>
+						<td class="error">{{description_error}}</td>
+					</tr>
+				</table>
+				<input type="submit" value="Submit!">
+			</form>
+	{% endblock %}
+
+	

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../static/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+		<title>Udacious /Projects/ - Find cool projects made by Udacity's students!</title>
+
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-30966401-3']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+
+	</head>
+	<body>
+		<div id="wrapper">
+
+			<div id="header">
+					<div class="ribbon"><div class="ribbon-stitches-top"></div><strong class="ribbon-content"><a class="logo_link" href="/"><h1>Udacious /Projects/</h1></a></strong><div class="ribbon-stitches-bottom"></div>
+					</div>
+					<div class="twitter">
+					<a href="https://twitter.com/UdaciousProject" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @UdaciousProject</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</div>
+			</div>
+
+			<div id="sub-header">
+					<p>Find cool projects made by <a href="http://www.udacity.com">Udacity</a>'s students!</p>
+					<div class="nav">
+						<ul>
+						<li class="button">
+							<a href="/about">
+								About
+							</a>
+						</li>
+						<li class="button">
+							<a href="/submit">
+								Submit an App!
+							</a>
+						</li>
+						</ul>
+					</div>
+			</div>
+
+			<div id="content">
+				{% block content_body %}
+				<div class="project">
+					<a class="project_name" href="{{proj.link}}">
+						<h3>{{proj.name}}</h3>
+					</a>
+					<img class="project_img" src="{{proj.image}}" alt="the project's image" >
+					<p class="proj_description">{{proj.description}}</p>
+				</div>
+				{% endblock %}
+				<div class="clear"></div>
+			</div>
+
+			<div id="footer">
+					<center>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+<br>Built by <a href="http://www.twitter.com/gcmartinelli">@gcmartinelli</a>. May/2012
+	</center>
+			</div>
+		</div>
+	</body>
+</html>

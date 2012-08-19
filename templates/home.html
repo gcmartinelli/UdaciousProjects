@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+	{% block content_body %}
+		{% for proj in projects %}
+			<div class="project">
+				<a class="project_name" href="{{proj.link}}" target="_blank">
+					<h3 class="project_name">{{proj.name}}</h3>
+				</a>
+				{% if proj.creator %}
+				<a class="project_creator" href="http://www.twitter.com/{{proj.creator}}" target="_blank">
+					<h6 class="project_creator">@{{proj.creator}}</h6>
+				</a>
+				{% else %}
+				<div class="creator_null"></div>
+				{% endif %}
+				<img class="project_img" src="{{proj.image}}" alt="the project's image" >
+				<p class="proj_description">{{proj.description}}</p>
+			</div>
+		{% endfor %}
+	{% endblock %}
