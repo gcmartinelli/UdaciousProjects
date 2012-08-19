@@ -242,5 +242,5 @@ app = webapp2.WSGIApplication([('/', MainHandler),
 								('/signup/?', Register),
 								('/login/?', Login),
 								('/logout/?', Logout),
-								('/comments/([0-9])/?', CommentHandler),],
+								('/comments/([0-9]){1,20}/?', CommentHandler),],
                               debug=False)
