@@ -165,6 +165,7 @@ class Logout(Handler):
 class CommentHandler(Handler):
 	def get(self, projectid):
 		project = models.Project.by_id(projectid)
+		logging.error('projectid: %s' % projectid)
 		if not project:
 			self.redirect('/')
 		else:
@@ -177,6 +178,7 @@ class CommentHandler(Handler):
 		username = self.user.username
 		avatar = self.user.avatar
 		projectid = projectid
+		logging.error('post project id: %s' % projectid)
 		c = models.Comment.register(projectid, username, text, avatar)
 		c.put()
 		self.redirect('/comments/%s' % (projectid))
@@ -242,5 +244,5 @@ app = webapp2.WSGIApplication([('/', MainHandler),
 								('/signup/?', Register),
 								('/login/?', Login),
 								('/logout/?', Logout),
-								('/comments/([0-9]){1,20}/?', CommentHandler),],
+								('/comments/([0-9]{1,20})/?', CommentHandler),],
                               debug=False)
